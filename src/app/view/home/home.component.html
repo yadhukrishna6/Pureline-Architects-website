@@ -1,0 +1,40 @@
+
+<section id="home">
+  <div class="hero-container">
+    <app-navbar *ngIf="isVisible"></app-navbar>
+    <video autoplay muted loop playsinline preload="auto" class="bg-video">
+      <source src="assets/hero_video.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <div class="hero-title">Pureline</div>
+      <div class="hero-subtitle" [innerHTML]="currentSubtitle"></div>
+      <a (click)="scrollToAboutUs()" class="hero-scroll-down-btn hidden sm:block">
+
+        <span class="hero-scroll-down-btn-icon item-one hidden sm:block">
+          <svg width="12" height="36" viewBox="0 0 12 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M5.47202 42.2929V0H6.52799V42.2929L11.0987 37.9645C11.3049 37.7692 11.6392 37.7692 11.8454 37.9645C12.0515 38.1597 12.0515 38.4763 11.8454 38.6716L6.37334 43.8536C6.16715 44.0488 5.83285 44.0488 5.62666 43.8536L0.154643 38.6716C-0.0515478 38.4763 -0.0515478 38.1597 0.154643 37.9645C0.360834 37.7692 0.695136 37.7692 0.901327 37.9645L5.47202 42.2929Z"
+              fill="currentColor" />
+          </svg>
+        </span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section id="aboutus">
+  <app-about-us></app-about-us>
+</section>
+<section id="our-service">
+  <app-our-service></app-our-service>
+</section>
+
+<section class="our-projects-section" id="our-projects">
+  <app-our-projects></app-our-projects>
+</section>
+
+<section class="our-approach-section" id="our-approach">
+  <app-our-approach></app-our-approach>
+</section>

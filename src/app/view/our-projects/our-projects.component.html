@@ -1,0 +1,30 @@
+<section class="our-projects-section" #recentWorks>
+  <div class="content-wrapper">
+    <div class="main-heading">
+      OUR PROJECTS<br />
+      AND BEYOND
+    </div>
+    <p class="description">
+      Our projects are driven by curiosity, innovation, and cross-disciplinary collaboration. From concept to realization, we deliver spaces and experiences that inspire and endure. <br />
+      Each project reflects a story told through design—crafted with intention and precision.
+    </p>
+    <a class="link-button" href="#">EXPLORE Projects</a>
+  </div>
+</section>
+
+<section class="featured-works" #outerWrapper>
+  <div class="scroll-wrapper">
+  <div class="horizontal-scroll-section" #scrollSection>
+    <div class="project-slide" *ngFor="let project of projects">
+      <div class="project-image" [style.backgroundImage]="'url(' + project.image + ')'" #parallaxImage></div>
+
+      <div class="overlay-content">
+        <div class="tag">{{ project.type }}</div>
+        <div class="title">{{ project.title }}</div>
+      </div>
+    </div>
+  </div>
+ </div>
+  <div class="floating-view-button" #floatingBtn>VIEW</div>
+ 
+</section>

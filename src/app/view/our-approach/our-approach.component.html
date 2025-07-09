@@ -1,0 +1,30 @@
+<section class="approach-section" #approachRef>
+  <div class="left-image  image-animate" style="background-image: url('assets/pexels-valeriya-827518.jpg')"></div>
+
+  <div class="right-content content-animate">
+    <div class="title title-animate">Our Approach Process</div>
+
+    <p class="intro-text text-animate">
+      We design with a deep sense of purpose—guided by research, driven by vision.<br>
+      Every decision is rooted in context, function, and future impact.<br>
+      Our process blends creativity with precision to shape meaningful spaces.
+    </p>
+
+    <div class="accordion accordion-animate">
+      <div
+        class="accordion-item"
+        *ngFor="let item of accordionItems; let i = index"
+        (click)="toggleAccordion(i)"
+        [class.open]="item.open"
+      >
+        <div class="accordion-header">
+          {{ item.title }}
+          <span class="icon">{{ item.open ? '−' : '+' }}</span>
+        </div>
+        <div class="accordion-body" *ngIf="item.open">
+          <p>{{ item.content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,159 @@
+.navbar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background-color: transparent;
+  transition: all 0.3s ease;
+
+  .nav-container {
+    max-width: 1297px;
+    margin: 0 auto;
+    padding: 2.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 992px) {
+    }
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-left: 56px;
+
+    @media (max-width: 992px) {
+      margin-left: 0;
+      font-size: 1.5rem;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    justify-content: flex-start;
+    flex: 2;
+    margin-left: 95px;
+
+    li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 20px;
+
+      &:hover {
+        color: #28a745;
+      }
+    }
+
+    .active-link {
+      border-bottom: 2px solid #28a745;
+    }
+
+    @media (max-width: 992px) {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-left: 0;
+
+      &.show {
+        display: flex;
+        background: white;
+        width: 100%;
+        padding: 1rem 2rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+        li a {
+          color: #333;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  .nav-cta {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    .contact-btn {
+      padding: 0.9rem 1.2rem;
+      background: transparent;
+      border: 2px solid white;
+      border-radius: 999px;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background: white;
+        color: #000;
+      }
+    }
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+
+    @media (max-width: 992px) {
+      display: block;
+      align-self: flex-end;
+      margin-left: auto;
+    }
+  }
+
+  &.scrolled {
+    background: white;
+
+    .logo,
+    .nav-links li a,
+    .hamburger {
+      color: #333;
+    }
+
+    .contact-btn {
+      border-color: #333;
+      color: #333;
+
+      &:hover {
+        background: #333;
+        color: white;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .nav-links.show {
+        background: #fff;
+      }
+    }
+  }
+
+  // Extra: Improve mobile spacing
+  @media (max-width: 600px) {
+    .nav-container {
+      padding: 2.8rem 3.5rem;
+    }
+    .logo {
+      font-size: 1.2rem;
+    }
+    .nav-links.show {
+      padding: 0.5rem 1rem;
+      gap: 1rem;
+    }
+  }
+}
