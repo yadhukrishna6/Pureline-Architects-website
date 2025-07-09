@@ -9,6 +9,8 @@ import { AboutUsComponent } from './view/about-us/about-us.component';
 import { OurServiceComponent } from './view/our-service/our-service.component';
 import { OurProjectsComponent } from './view/our-projects/our-projects.component';
 import { OurApproachComponent } from './view/our-approach/our-approach.component';
+import { TestimonialsComponent } from './view/testimonials/testimonials.component';
+import { CarouselModule } from 'primeng/carousel';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { OurApproachComponent } from './view/our-approach/our-approach.component
     AboutUsComponent,
     OurServiceComponent,
     OurProjectsComponent,
-    OurApproachComponent
+    OurApproachComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

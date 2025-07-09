@@ -1,0 +1,50 @@
+<section class="testimonial-carousel">
+  <div class="heading-wrapper">
+    <div class="headline-dot"></div>
+    <div class="subheading">Your Wonderful Review’s</div>
+    <h2 class="main-heading">Real stories from satisfied customers who love our furniture.</h2>
+    <p class="description">Ut et consequat vel diam feugiat mi. Elementum mattis habitasse velit non venenatis et nunc
+      dolor. Tellus.</p>
+  </div>
+
+  <!-- Track 1 -->
+  <div class="carousel-track-wrapper" #track1>
+     <div class="fog-left"></div>
+  <div class="fog-right"></div>
+    <div class="carousel-track">
+     <div class="testimonial-card" *ngFor="let review of reviews">
+        <div class="stars">
+          <ng-container *ngFor="let i of [0,1,2,3,4]">
+            <svg width="21" height="21" viewBox="0 0 24 24" [attr.fill]="i < review.stars ? '#fbbf24' : '#d1d5db'"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L14.9 8.6L22 9.3L16.5 14L18.2 21L12 17.3L5.8 21L7.5 14L2 9.3L9.1 8.6L12 2Z" />
+            </svg>
+          </ng-container>
+        </div>
+        <div class="name">{{ review.name }}</div>
+        <p class="text">{{ review.text }}</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Track 2 -->
+  <div class="carousel-track-wrapper reverse" #track2>
+      <div class="fog-left"></div>
+  <div class="fog-right"></div>
+    <div class="carousel-track">
+      <div class="testimonial-card" *ngFor="let review of reviews">
+        <div class="stars">
+          <ng-container *ngFor="let i of [0,1,2,3,4]">
+            <svg width="21" height="21" viewBox="0 0 24 24" [attr.fill]="i < review.stars ? '#fbbf24' : '#d1d5db'"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L14.9 8.6L22 9.3L16.5 14L18.2 21L12 17.3L5.8 21L7.5 14L2 9.3L9.1 8.6L12 2Z" />
+            </svg>
+          </ng-container>
+        </div>
+        <div class="name">{{ review.name }}</div>
+        <p class="text">{{ review.text }}</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,141 @@
+.testimonial-carousel {
+  background: #fff;
+  padding: 6vw 0;
+  max-width: 1199px;
+  margin: 0 auto;
+
+  .heading-wrapper {
+    text-align: center;
+    margin-bottom: 4vw;
+
+    
+
+    .subheading {
+      font-size: 1vw;
+      color: #777;
+    }
+
+    .main-heading {
+      font-size: 3vw;
+      font-weight: bold;
+      margin: 1vw 0;
+    }
+
+    .description {
+      font-size: 1.2vw;
+      color: #666;
+    }
+  }
+
+  .carousel-track-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+
+    &.reverse {
+      margin-top: 2vw;
+    }
+
+    .carousel-track {
+        position: relative;
+      display: flex;
+      gap: 2vw;
+    }
+
+    .fog-left,
+  .fog-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px; // Adjust as needed
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .fog-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  }
+
+  .fog-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  }
+
+ .testimonial-card {
+  width: 430px;
+  background: #f2f3f2;
+  padding: 1.5vw;
+  flex-shrink: 0;
+  min-height: 175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'Arial', sans-serif;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vw;
+
+    .stars {
+      display: flex;
+      gap: 0.2vw;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+  
+  }
+
+  .text {
+  font-size: 1vw;
+  line-height: 1.6;
+  color: #333;
+  white-space: normal;           // Allow text wrapping
+  overflow: visible;             // Allow full height
+  text-overflow: unset;          // Remove ellipsis
+  display: block;                // Remove -webkit-box if previously set
+}
+
+}
+
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .heading-wrapper {
+      .main-heading {
+        font-size: 6vw;
+      }
+
+      .description {
+        font-size: 4vw;
+      }
+    }
+
+    .testimonial-card {
+      min-width: 80vw;
+      .name {
+        font-size: 4vw;
+      }
+
+      .text {
+        font-size: 3.5vw;
+      }
+    }
+  }
+}
+  .name {
+      font-size: 1.1vw;
+      font-weight: bold;
+      color: #111;
+      margin-bottom:3px;
+      margin-top: 15px;
+
+    }
