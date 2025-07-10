@@ -81,10 +81,10 @@
     flex-direction: column;
 
   .left-image {
-  width: 50%;
+  width: 151%;
   height: 100vh;
   background-image: url('/assets/pexels-valeriya-827518.jpg');
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   position: relative;
   overflow: hidden;
@@ -116,7 +116,7 @@
 
 
     .right-content {
-      width: 100%;
+      width: 88%;
       padding: 6vw 5vw;
 
       .title {

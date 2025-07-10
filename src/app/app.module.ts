@@ -11,6 +11,8 @@ import { OurProjectsComponent } from './view/our-projects/our-projects.component
 import { OurApproachComponent } from './view/our-approach/our-approach.component';
 import { TestimonialsComponent } from './view/testimonials/testimonials.component';
 import { CarouselModule } from 'primeng/carousel';
+import { CardSectionComponent } from './view/card-section/card-section.component';
+import { FooterComponent } from './view/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CarouselModule } from 'primeng/carousel';
     OurServiceComponent,
     OurProjectsComponent,
     OurApproachComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    CardSectionComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -141,7 +141,7 @@
   .services-section {
     flex-direction: column;
     gap: 2rem;
-    padding: 2rem 1rem;
+    padding: 0rem 1rem;
 
     .service-tabs {
       gap: 1.5rem;
@@ -172,8 +172,8 @@
       align-items: center;
 
       .service-image {
-        width: 100%;
-        max-width: 100%;
+        width: 144%;
+        max-width: 144%;
         height: auto;
         aspect-ratio: 3 / 2;
         border-radius: 12px;

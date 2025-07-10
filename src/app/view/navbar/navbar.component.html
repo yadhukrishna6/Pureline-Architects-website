@@ -1,5 +1,4 @@
-<nav 
- [ngClass]="{ 'navbar': true,  }">
+<nav [ngClass]="{ 'navbar': true,  }">
   <div class="nav-container">
     <!-- Left: Logo -->
     <div class="logo">Arcitech</div>
@@ -8,8 +7,9 @@
     <ul class="nav-links" [class.show]="mobileMenuOpen">
       <li><a routerLink="/home" routerLinkActive="active-link" (click)="closeMobileMenu()">Home</a></li>
       <li><a routerLink="/projects" routerLinkActive="active-link" (click)="closeMobileMenu()">Projects</a></li>
+      <li><a routerLink="/service" routerLinkActive="active-link" (click)="closeMobileMenu()">Services</a></li>
       <li><a routerLink="/about" routerLinkActive="active-link" (click)="closeMobileMenu()">About</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active-link" (click)="closeMobileMenu()">Contact</a></li>
+
     </ul>
 
     <!-- Right: CTA Button -->

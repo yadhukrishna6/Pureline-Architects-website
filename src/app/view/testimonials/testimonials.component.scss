@@ -111,7 +111,7 @@
   @media screen and (max-width: 768px) {
     .heading-wrapper {
       .main-heading {
-        font-size: 6vw;
+        font-size: 5vw;
       }
 
       .description {
@@ -138,4 +138,61 @@
       margin-bottom:3px;
       margin-top: 15px;
 
+    }@media screen and (max-width: 768px) {
+  .testimonial-carousel {
+    padding:  12vw 19px;
+
+    .heading-wrapper {
+      .subheading {
+        font-size: 3.5vw;
+      }
+
+      .main-heading {
+        font-size: 6vw;
+      }
+
+      .description {
+        font-size: 4vw;
+      }
     }
+
+    .carousel-track-wrapper {
+      .carousel-track {
+        gap: 4vw;
+      }
+
+      .testimonial-card {
+        width: 80vw;
+        padding: 2.5vw; // reduced padding
+        min-height: 120px; // decreased from desktop
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .header {
+          margin-bottom: 2vw;
+
+          .stars {
+            gap: 1vw;
+
+            svg {
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+
+        .name {
+          font-size: 3.5vw;
+          margin-top: 1vw;
+          margin-bottom: 0.5vw;
+        }
+
+        .text {
+          font-size: 3.2vw;
+          line-height: 1.4; // slightly tighter
+        }
+      }
+    }
+  }
+}
