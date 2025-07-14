@@ -5,19 +5,35 @@
 
     <!-- Center: Navigation Links -->
     <ul class="nav-links" [class.show]="mobileMenuOpen">
+      <li class="mobile-only mobile-logo">
+        <div class="logo">Arcitech</div>
+      </li>
       <li><a routerLink="/home" routerLinkActive="active-link" (click)="closeMobileMenu()">Home</a></li>
       <li><a routerLink="/projects" routerLinkActive="active-link" (click)="closeMobileMenu()">Projects</a></li>
-      <li><a routerLink="/service" routerLinkActive="active-link" (click)="closeMobileMenu()">Services</a></li>
-      <li><a routerLink="/about" routerLinkActive="active-link" (click)="closeMobileMenu()">About</a></li>
+      <li><a href="javascript:void(0)" (click)="navigateToSection('our-service'); closeMobileMenu()">Services</a></li>
+      <li><a href="javascript:void(0)" (click)="navigateToSection('aboutus'); closeMobileMenu()">About Us</a></li>
+
+      <!-- Mobile Only Menu Items -->
+      <li class="mobile-only">
+        <a routerLink="/contact" routerLinkActive="active-link" (click)="closeMobileMenu()">Contact-Us</a>
+      </li>
+      <li class="mobile-only">
+        <a href="javascript:void(0)" (click)="navigateToSection('our-approach'); closeMobileMenu()">Our Approach</a>
+      </li>
 
     </ul>
 
     <!-- Right: CTA Button -->
     <div class="nav-cta">
-      <button class="contact-btn">Contact Us →</button>
+      <button class="contact-btn" routerLink="/contact">Contact Us</button>
     </div>
 
     <!-- Mobile Hamburger -->
-    <div class="hamburger" (click)="toggleMobileMenu()">☰</div>
+    <div class="hamburger" (click)="toggleMobileMenu()">
+      {{ mobileMenuOpen ? '✕' : '☰' }}
+    </div>
+
+    <div class="mobile-overlay" *ngIf="mobileMenuOpen" (click)="closeMobileMenu()"></div>
+
   </div>
 </nav>

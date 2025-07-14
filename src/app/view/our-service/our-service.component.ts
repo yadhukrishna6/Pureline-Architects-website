@@ -26,33 +26,33 @@ export class OurServiceComponent implements AfterViewInit {
   services = [
     {
       number: '01',
-      title: 'Pre-construction Planning',
-      description: 'Early-stage planning and coordination to align on budgets, schedules, and design intent.',
-      image: 'assets/pexels-fotoaibe-1643383.jpg'
+      title: 'Strategic Construction Planning',
+      description: 'Comprehensive early-stage planning and coordination to align on budgets, timelines, and design objectives.',
+      image: 'assets/serviceImages/construction.webp'
     },
     {
       number: '02',
-      title: 'General Contracting',
-      description: 'We oversee day-to-day construction activities, ensuring safety, quality, and efficiency.',
-      image: 'assets/pexels-valeriya-827518.jpg'
+      title: 'Creative Interior Design',
+      description: 'We manage day-to-day construction activities with a focus on design excellence, safety, and efficiency.',
+      image: 'assets/serviceImages/service_interior.webp'
     },
     {
       number: '03',
-      title: 'Design-Build',
-      description: 'A unified approach combining design and construction teams under one contract for streamlined project delivery.',
-      image: 'assets/pexels-fotoaibe-1643383.jpg'
+      title: 'Modern Landscaping Solutions',
+      description: 'A unified approach blending design and execution teams under one streamlined contract for flawless delivery.',
+      image: 'assets/serviceImages/landscaping.webp'
     },
     {
       number: '04',
-      title: 'Sustainable Building',
-      description: 'Environmentally responsible and resource-efficient building practices, materials, and systems.',
-      image: 'assets/pexels-valeriya-827518.jpg'
+      title: 'Innovative Architecture Services',
+      description: 'Sustainable and resource-efficient architectural practices using modern materials and smart systems.',
+      image: 'assets/serviceImages/Architecture.webp'
     },
     {
       number: '05',
-      title: 'Smart Building Technology',
-      description: 'Integrating advanced technologies for building automation, energy efficiency, and enhanced occupant experience.',
-      image: 'assets/pexels-fotoaibe-1643383.jpg'
+      title: 'Expert Project Consultation',
+      description: 'Leveraging cutting-edge technologies for automation, energy efficiency, and superior user experience.',
+      image: 'assets/serviceImages/consultancy.webp'
     }
   ];
 

@@ -1,0 +1,232 @@
+.projects-master {
+  padding: 6vw 4vw;
+
+  .section-heading {
+    font-size: 3.5vw;
+    font-weight: 800;
+    margin-bottom: 1vw;
+  }
+
+  .section-subheading {
+    font-size: 1.3vw;
+    color: #666;
+    margin-bottom: 4vw;
+  }
+
+  .project-top-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 32rem;
+  }
+
+  .project-bottom-content-wrapper {
+    max-width: 76.625rem;
+    margin: 0 auto;
+  }
+
+  .project-collection-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 6.125rem;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover .project-image {
+      transform: scale(1.03);
+    }
+
+    .project-image-wrapper {
+      width: 34.75rem;
+      height: 35.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+
+    .project-text-row {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+    .project-category {
+      font-size: 1.0vw;
+      color: #888;
+    }
+
+    .project-title {
+      font-size: 1.4vw;
+      font-weight: 600;
+      color: #111;
+      margin: 0;
+      text-align: right;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .project-top-content {
+      width: 100%;
+    }
+
+    .project-collection-list {
+      grid-template-columns: 1fr;
+      grid-gap: 6vw;
+    }
+
+    .project-card {
+      .project-image-wrapper {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+      }
+
+      .project-title {
+        font-size: 5vw;
+      }
+
+      .project-category {
+        font-size: 3.5vw;
+      }
+    }
+
+    .section-heading {
+      font-size: 8vw;
+    }
+
+    .section-subheading {
+      font-size: 4vw;
+    }
+  }
+}
+
+.cta-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  text-align: left;
+  padding: 0 11vw;
+  color: #fff;
+
+  .cta-bg {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.2)
+      ),
+      url("/assets/pexels-valeriya-827518.jpg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    will-change: transform;
+    transform: scale(1.1);
+  }
+
+  .cta-content {
+    max-width: 800px;
+        margin-top: 83px;
+    z-index: 2;
+
+    .cta-title {
+      font-size: 3.8vw;
+      font-weight: 700;
+      margin-bottom: 1.5vw;
+    }
+
+    .cta-description {
+      font-size: 1.2vw;
+      margin-bottom: 2.5vw;
+      line-height: 1.6;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      background: #fff;
+      color: #000;
+      padding: 1vw 2vw;
+      border-radius: 2vw;
+      font-size: 1vw;
+      font-weight: 500;
+      transition: background 0.3s, color 0.3s;
+
+      &:hover {
+        background: #000;
+        color: #fff;
+
+        .cta-icon {
+          background: #fff;
+          color: #000;
+        }
+      }
+
+      .cta-icon {
+        margin-left: 1vw;
+        width: 2vw;
+        height: 2vw;
+        background: #000;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background 0.3s, color 0.3s;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .cta-section {
+    min-height: 100vh;
+    padding: 0 6vw;
+
+    .cta-content {
+      .cta-title {
+        font-size: 7vw;
+        margin-bottom: 4vw;
+      }
+
+      .cta-description {
+        font-size: 4vw;
+        margin-bottom: 5vw;
+        line-height: 1.5;
+      }
+
+      .cta-button {
+        font-size: 3.5vw;
+        padding: 3vw 5vw;
+        border-radius: 5vw;
+
+        .cta-icon {
+          margin-left: 2vw;
+          width: 5vw;
+          height: 5vw;
+          font-size: 3vw;
+        }
+      }
+    }
+  }
+}

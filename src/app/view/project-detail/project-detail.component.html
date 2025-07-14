@@ -1,0 +1,40 @@
+<div class="project-detail-container">
+    <!-- Fixed Background Image -->
+    <div class="project-fixed-bg" [ngStyle]="{'background-image': 'url(' + project.image + ')'}">
+        <div class="overlay"></div>
+    </div>
+
+    <!-- Scrollable Content -->
+    <div class="project-scroll-content">
+
+        <!-- Transparent Title Section -->
+        <div class="project-title-wrapper">
+            <p class="project-category">{{ project.category }}</p>
+            <div class="project-title">{{ project.title }}</div>
+        </div>
+
+        <!-- Description Content -->
+        <div class="project-description">
+            <p>{{ project.description }}</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </div>
+        <!-- Additional Project Details -->
+        <div class="project-meta">
+            <h3>Project Details</h3>
+            <ul>
+                <li><strong>Client:</strong> {{ project.client || 'Private Client' }}</li>
+                <li><strong>Location:</strong> {{ project.location || 'London, UK' }}</li>
+                <li><strong>Time Period:</strong> {{ project.period || '2022 - 2023' }}</li>
+            </ul>
+        </div>
+
+        <!-- Project Gallery -->
+        <div class="project-gallery">
+            <h3>Project Gallery</h3>
+            <div class="gallery-grid">
+                <img *ngFor="let img of project.gallery" [src]="img" alt="Project Image" />
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<section class="cta-section" #ctaSection>
+  <div class="cta-content">
+    <h2 class="cta-title">Our Projects</h2>
+    <p class="cta-description">
+      Discover how we transform ideas into beautiful spaces. Whether you're planning a new project or seeking collaboration,
+      let's build something exceptional together.
+    </p>
+  </div>
+  <div class="cta-bg" #parallaxBg></div>
+</section>
+
+
+<section class="projects-master">
+    <div class="project-bottom-content-wrapper">
+     
+
+        <div class="project-collection-list">
+            <div class="project-card" *ngFor="let project of projects" (click)="goToDetail(project.id)" #projectCard>
+                <div class="project-image-wrapper">
+                    <img [src]="project.image" [alt]="project.title" class="project-image" />
+                </div>
+                <div class="project-text-row">
+                    <p class="project-category">{{ project.category }}</p>
+                    <h3 class="project-title">{{ project.title }}</h3>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<app-card-section></app-card-section>

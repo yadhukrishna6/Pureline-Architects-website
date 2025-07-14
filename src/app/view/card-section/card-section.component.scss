@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: start;
   text-align: left;
-  padding: 0 8vw;
+  padding: 0 10vw;
   color: #fff;
 
   .cta-bg {
@@ -15,8 +15,8 @@
         rgba(0, 0, 0, 0.55),
         rgba(0, 0, 0, 0.2)
       ),
-      url("/assets/pexels-valeriya-827518.jpg");
-    background-size: cover;
+      url("/assets/serviceImages/contatusss.webp");
+
     background-position: center;
     position: absolute;
     inset: 0;
@@ -110,4 +110,3 @@
     }
   }
 }
-

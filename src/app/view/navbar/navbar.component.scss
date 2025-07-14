@@ -14,7 +14,8 @@
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 992px) {
+    @media (max-width: 600px) {
+      padding: 2.8rem 3.5rem;
     }
   }
 
@@ -28,10 +29,15 @@
       margin-left: 0;
       font-size: 1.5rem;
     }
+
+    @media (max-width: 600px) {
+      font-size: 1.2rem;
+    }
   }
 
   .nav-links {
     display: flex;
+    margin-top: 0 !important;
     gap: 3rem;
     list-style: none;
     justify-content: flex-start;
@@ -45,36 +51,58 @@
       font-size: 20px;
 
       &:hover {
-        color: #28a745;
+        color: white;
       }
     }
 
     .active-link {
-      border-bottom: 2px solid #28a745;
+      border-bottom: 2px solid white;
     }
 
     @media (max-width: 992px) {
-      display: none;
       flex-direction: column;
       align-items: flex-start;
-      gap: 1.5rem;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      height: 100vh;
+      width: 366px;
+      background: rgb(0 0 0 / 70%);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px); // For Safari support
+
+      padding: 2rem;
+      padding-top: 4rem;
       margin-left: 0;
+      gap: 1.5rem;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      transition: left 0.3s ease-in-out;
+      z-index: 2000;
 
       &.show {
-        display: flex;
-        background: white;
-        width: 100%;
-        padding: 1rem 2rem;
-        position: absolute;
-        top: 100%;
         left: 0;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-
-        li a {
-          color: #333;
-          font-size: 1.1rem;
-        }
       }
+
+      li {
+        width: 100%;
+      }
+
+      li a {
+        color: #fff;
+        width: 100%;
+        font-size: 1.6rem;
+        font-weight: 800;
+      }
+       .mobile-logo {
+      margin-bottom: 1rem;
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: white;
+        margin-left: 0;
+      }
+    }
     }
   }
 
@@ -114,6 +142,7 @@
       display: block;
       align-self: flex-end;
       margin-left: auto;
+      z-index: 2100; // keep above nav-links
     }
   }
 
@@ -124,6 +153,7 @@
     .nav-links li a,
     .hamburger {
       color: #333;
+      margin-top: 0 !important;
     }
 
     .contact-btn {
@@ -142,18 +172,11 @@
       }
     }
   }
+}
+.mobile-only {
+  display: none;
 
-  // Extra: Improve mobile spacing
-  @media (max-width: 600px) {
-    .nav-container {
-      padding: 2.8rem 3.5rem;
-    }
-    .logo {
-      font-size: 1.2rem;
-    }
-    .nav-links.show {
-      padding: 0.5rem 1rem;
-      gap: 1rem;
-    }
+  @media (max-width: 992px) {
+    display: block;
   }
 }

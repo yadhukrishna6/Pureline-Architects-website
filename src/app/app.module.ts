@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
+import { ToastModule } from 'primeng/toast';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './view/navbar/navbar.component';
@@ -13,6 +15,9 @@ import { TestimonialsComponent } from './view/testimonials/testimonials.componen
 import { CarouselModule } from 'primeng/carousel';
 import { CardSectionComponent } from './view/card-section/card-section.component';
 import { FooterComponent } from './view/footer/footer.component';
+import { ContactUsComponent } from './view/contact-us/contact-us.component';
+import { ProjectMasterComponent } from './view/project-master/project-master.component';
+import { ProjectDetailComponent } from './view/project-detail/project-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +30,18 @@ import { FooterComponent } from './view/footer/footer.component';
     OurApproachComponent,
     TestimonialsComponent,
     CardSectionComponent,
-    FooterComponent
+    FooterComponent,
+    ContactUsComponent,
+    ProjectMasterComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CarouselModule,
+    FormsModule,
+    ToastModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
