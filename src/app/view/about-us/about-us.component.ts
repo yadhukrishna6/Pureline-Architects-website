@@ -12,45 +12,38 @@ gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-about-us',
-  standalone:false,
+  standalone: false,
   templateUrl: './about-us.component.html',
   styleUrls: ['./about-us.component.scss'],
 })
-export class AboutUsComponent implements AfterViewInit, OnDestroy {
-  @ViewChild('section', { static: true }) section!: ElementRef;
+export class AboutUsComponent implements AfterViewInit {
+  @ViewChild('aboutLeft') aboutLeft!: ElementRef;
+  @ViewChild('aboutRight') aboutRight!: ElementRef;
 
   ngAfterViewInit(): void {
-    const section = this.section.nativeElement;
-    const bg = section.querySelector('.parallax-bg');
-    const content = section.querySelector('.about-text-container');
-
-    // Parallax background scroll
-    gsap.to(bg, {
-      yPercent: -20,
-      ease: 'none',
+   
+    gsap.from(this.aboutLeft.nativeElement, {
       scrollTrigger: {
-        trigger: section,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-      },
-    });
-
-    // Fade-in content
-    gsap.to(content, {
-      opacity: 1,
-      y: 0,
-      duration: 1.4,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: section,
+        trigger: this.aboutLeft.nativeElement,
         start: 'top 80%',
-        toggleActions: 'play none none none',
+        toggleActions: 'play none none none'
       },
+      x: -100,
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power3.out'
     });
-  }
 
-  ngOnDestroy(): void {
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    gsap.from(this.aboutRight.nativeElement, {
+      scrollTrigger: {
+        trigger: this.aboutRight.nativeElement,
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      },
+      x: 100,
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power3.out'
+    });
   }
 }
