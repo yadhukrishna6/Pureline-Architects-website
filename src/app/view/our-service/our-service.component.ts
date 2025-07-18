@@ -18,7 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
   styleUrls: ['./our-service.component.scss'],
 })
 export class OurServiceComponent implements AfterViewInit {
- @ViewChild('serviceTabs', { static: true }) serviceTabs!: ElementRef;
+  @ViewChild('serviceTabs', { static: true }) serviceTabs!: ElementRef;
   @ViewChild('servicePreview', { static: true }) servicePreview!: ElementRef;
 
   activeIndex = 0;
@@ -56,8 +56,12 @@ export class OurServiceComponent implements AfterViewInit {
     }
   ];
 
-  
+
   ngAfterViewInit() {
+
+
+   
+
     gsap.from(this.serviceTabs.nativeElement, {
       scale: 0.9,
       opacity: 0,

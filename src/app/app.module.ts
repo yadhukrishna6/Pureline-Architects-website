@@ -18,6 +18,7 @@ import { FooterComponent } from './view/footer/footer.component';
 import { ContactUsComponent } from './view/contact-us/contact-us.component';
 import { ProjectMasterComponent } from './view/project-master/project-master.component';
 import { ProjectDetailComponent } from './view/project-detail/project-detail.component';
+import { HomelayoutComponent } from './view/homelayout/homelayout.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ProjectDetailComponent } from './view/project-detail/project-detail.com
     FooterComponent,
     ContactUsComponent,
     ProjectMasterComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    HomelayoutComponent
   ],
   imports: [
     BrowserModule,

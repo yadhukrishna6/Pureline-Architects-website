@@ -10,12 +10,8 @@
 
   <div class="services-section">
     <div class="service-tabs" #serviceTabs>
-      <div
-        *ngFor="let service of services; let i = index"
-        class="service-tab"
-        [class.active]="i === activeIndex"
-        (mouseenter)="setActive(i)"
-      >
+      <div *ngFor="let service of services; let i = index" class="service-tab" [class.active]="i === activeIndex"
+        (mouseenter)="setActive(i)">
         <div class="tab-header">
           <span class="tab-number">{{ service.number }}</span>
           <h4 class="tab-title">{{ service.title }}</h4>
@@ -32,11 +28,7 @@
     </div>
 
     <div class="service-preview" #servicePreview>
-      <img
-        class="service-image"
-        [src]="services[activeIndex].image"
-        [alt]="services[activeIndex].title"
-      />
+      <img class="service-image" [src]="services[activeIndex].image" [alt]="services[activeIndex].title" />
     </div>
   </div>
 </div>

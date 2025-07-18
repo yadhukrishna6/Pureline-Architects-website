@@ -22,28 +22,6 @@ export class AboutUsComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
    
-    gsap.from(this.aboutLeft.nativeElement, {
-      scrollTrigger: {
-        trigger: this.aboutLeft.nativeElement,
-        start: 'top 80%',
-        toggleActions: 'play none none none'
-      },
-      x: -100,
-      opacity: 0,
-      duration: 1.2,
-      ease: 'power3.out'
-    });
-
-    gsap.from(this.aboutRight.nativeElement, {
-      scrollTrigger: {
-        trigger: this.aboutRight.nativeElement,
-        start: 'top 80%',
-        toggleActions: 'play none none none'
-      },
-      x: 100,
-      opacity: 0,
-      duration: 1.2,
-      ease: 'power3.out'
-    });
+   
   }
 }
