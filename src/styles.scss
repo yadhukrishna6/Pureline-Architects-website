@@ -3,13 +3,16 @@
 @import 'primeflex/primeflex.css';
 @import "primeicons/primeicons.css";
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&display=swap');
 
 /* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-   font-family: 'Urbanist', Arial, sans-serif;
+  //  font-family: 'Urbanist', Arial, sans-serif;
+  // font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
    overflow-x: hidden;
 }
 html {
