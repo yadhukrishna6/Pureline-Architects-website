@@ -1,39 +1,26 @@
-<nav [ngClass]="{ 'navbar': true,  }">
-  <div class="nav-container">
-    <!-- Left: Logo -->
-    <div class="logo">Arcitech</div>
+<nav class="navbar">
+  <div class="logo">PURELINE</div>
 
-    <!-- Center: Navigation Links -->
-    <ul class="nav-links" [class.show]="mobileMenuOpen">
-      <li class="mobile-only mobile-logo">
-        <div class="logo">Arcitech</div>
-      </li>
-      <li><a routerLink="/home" routerLinkActive="active-link" (click)="closeMobileMenu()">Home</a></li>
-      <li><a routerLink="/projects" routerLinkActive="active-link" (click)="closeMobileMenu()">Projects</a></li>
-      <li><a href="javascript:void(0)" (click)="navigateToSection('our-service'); closeMobileMenu()">Services</a></li>
-      <li><a href="javascript:void(0)" (click)="navigateToSection('aboutus'); closeMobileMenu()">About Us</a></li>
+  <div class="menu-button" [class.open]="isOpen" (click)="toggleMenu()">
+    <div class="line top"></div>
+    <div class="line middle"></div>
+    <div class="line bottom"></div>
+  </div>
 
-      <!-- Mobile Only Menu Items -->
-      <li class="mobile-only">
-        <a routerLink="/contact" routerLinkActive="active-link" (click)="closeMobileMenu()">Contact-Us</a>
-      </li>
-      <li class="mobile-only">
-        <a href="javascript:void(0)" (click)="navigateToSection('our-approach'); closeMobileMenu()">Our Approach</a>
-      </li>
+  <div class="menu-overlay" [class.active]="isOpen">
+    <div class="social-links">
+  <a href="#">FACEBOOK</a>
+  <a href="#">INSTAGRAM</a>
+</div>
 
+    <div class="close-area" (click)="toggleMenu()">
+      <span class="close-icon">×</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
-
-    <!-- Right: CTA Button -->
-    <div class="nav-cta">
-      <button class="contact-btn" routerLink="/contact">Contact Us</button>
-    </div>
-
-    <!-- Mobile Hamburger -->
-    <div class="hamburger" (click)="toggleMobileMenu()">
-      {{ mobileMenuOpen ? '✕' : '☰' }}
-    </div>
-
-    <div class="mobile-overlay" *ngIf="mobileMenuOpen" (click)="closeMobileMenu()"></div>
-
   </div>
 </nav>
