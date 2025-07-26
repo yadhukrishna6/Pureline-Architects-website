@@ -1,34 +1,98 @@
-<div class="services-section-wrapper">
-  <div class="section-top">
-    <div class="subtitle-wrapper">
-      <p class="subtitle">What we offer</p>
-    </div>
-    <div class="title-wrapper">
-      <h2 class="main-title">Our Selected Services</h2>
-    </div>
-  </div>
-
-  <div class="services-section">
-    <div class="service-tabs" #serviceTabs>
-      <div *ngFor="let service of services; let i = index" class="service-tab" [class.active]="i === activeIndex"
-        (mouseenter)="setActive(i)">
-        <div class="tab-header">
-          <span class="tab-number">{{ service.number }}</span>
-          <h4 class="tab-title">{{ service.title }}</h4>
-        </div>
-
-        <div class="tab-underline">
-          <div class="underline-fill" [style.width.%]="i === activeIndex ? 100 : 0"></div>
-        </div>
-
-        <div class="tab-description" *ngIf="i === activeIndex">
-          <p>{{ service.description }}</p>
-        </div>
+<div class="stack-section" id="section1">
+  <div class="section-inner">
+    <div class="section-left">
+      <div class="section-number">1/5</div>
+      <div class="section-title">
+        <h2> ARCHITECTURE</h2>
+        <div class="section-title-underline"></div>
+      </div>
+      <div class="section-content">
+        <p>Designing innovative spaces that inspire and function beautifully. I blend creativity and practicality to deliver architectural solutions tailored to your needs.</p>
+       
       </div>
     </div>
+    <div class="section-right">
+      <img src="assets/serviceImages/Architecture.webp" alt="Architecture" />
+    </div>
+  </div>
+</div>
+<div class="section-divider"></div>
 
-    <div class="service-preview" #servicePreview>
-      <img class="service-image" [src]="services[activeIndex].image" [alt]="services[activeIndex].title" />
+<div class="stack-section" id="section2">
+  <div class="section-inner">
+    <div class="section-left">
+      <div class="section-number">2/5</div>
+      <div class="section-title">
+        <h2> WEB DEVELOPER</h2>
+        <div class="section-title-underline"></div>
+      </div>
+      <div class="section-content">
+        <p>Crafting engaging online journeys with seamless designs, promo websites, and immersive virtual tours. I create memorable digital experiences by guiding visitors through interactive property exploration.</p>
+       
+      </div>
+    </div>
+    <div class="section-right">
+      <img src="assets/serviceImages/service_interior.webp" alt="Web Developer" />
+    </div>
+  </div>
+</div>
+<div class="section-divider"></div>
+
+<div class="stack-section" id="section3">
+  <div class="section-inner">
+    <div class="section-left">
+      <div class="section-number">3/5</div>
+      <div class="section-title">
+        <h2> INTERIOR DESIGN</h2>
+        <div class="section-title-underline"></div>
+      </div>
+      <div class="section-content">
+        <p>Transforming interiors with a blend of style and function. I create spaces that reflect your personality and enhance your lifestyle.</p>
+      
+      </div>
+    </div>
+    <div class="section-right">
+      <img src="assets/serviceImages/service_interior.webp" alt="Interior Designer" />
+    </div>
+  </div>
+</div>
+<div class="section-divider"></div>
+
+<div class="stack-section" id="section4">
+  <div class="section-inner">
+    <div class="section-left">
+      <div class="section-number">4/5</div>
+      <div class="section-title">
+        <h2> CONSULTANCY</h2>
+        <div class="section-title-underline"></div>
+      </div>
+      <div class="section-content">
+        <p>Providing expert advice and strategic solutions for your projects. I help clients navigate complex challenges and achieve their goals with tailored consultancy services.</p>
+       
+      </div>
+    </div>
+    <div class="section-right">
+      <img src="assets/serviceImages/consultancy.webp" alt="Consultant" />
+    </div>
+  </div>
+</div>
+<div class="section-divider"></div>
+
+<div class="stack-section" id="section5">
+  <div class="section-inner">
+    <div class="section-left">
+      <div class="section-number">5/5</div>
+      <div class="section-title">
+        <h2> LANDSCAPING</h2>
+        <div class="section-title-underline"></div>
+      </div>
+      <div class="section-content">
+        <p>Designing and creating beautiful outdoor spaces that harmonize with nature. I bring landscapes to life with innovative ideas and sustainable practices.</p>
+        
+      </div>
+    </div>
+    <div class="section-right">
+      <img src="assets/serviceImages/landscaping.webp" alt="Landscaping Expert" />
     </div>
   </div>
 </div>
