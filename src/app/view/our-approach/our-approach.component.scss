@@ -1,138 +1,192 @@
+.services-section-wrapper {
+  background-color: #000;
+  color: #fff;
+  padding: 6rem 2rem;
+  max-width: 1362px;
+  margin: 0 auto;
 
-.right-content {
-  // ...existing styles
+  .section-top {
+    text-align: start;
+    margin-bottom: 4rem;
 
-  .intro-text {
-    font-size: 1.1vw;
-    color: #444;
-    margin-bottom: 2vw;
-    line-height: 1.6;
+    .subtitle {
+      font-size: 1rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+    }
 
-    @media screen and (max-width: 768px) {
-      font-size: 4vw;
-      margin-bottom: 5vw;
+    .main-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      margin-left: 2rem;
     }
   }
 }
 
-.approach-section {
+.services-section {
   display: flex;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  
+  gap: 4rem;
+  align-items: flex-start;
+  padding: 4rem 2rem;
+  border-radius: 24px;
 
-  .left-image {
-    width: 50%;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .right-content {
-    width: 50%;
-    padding: 6vw 4vw;
+  .service-tabs {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background: #fff;
+    gap: 2rem;
 
-    .title {
-      font-size: 3.5vw;
-      font-weight: 800;
-      margin-bottom: 2vw;
-    }
+    .service-tab {
+      cursor: pointer;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: background-color 0.5s ease;
 
-    .accordion {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5vw;
+      .tab-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
 
-      .accordion-item {
-        border-bottom: 1px solid #ccc;
-        cursor: pointer;
-        padding: 1vw 0;
-
-        .accordion-header {
-          font-size: 1.2vw;
+        .tab-number {
+          font-size: 1.25rem;
           font-weight: 600;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          color: #aaa;
         }
 
-        .accordion-body {
-          margin-top: 0.5vw;
-          font-size: 1vw;
-          color: #555;
+        .tab-title {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #fff;
+          margin: 0;
+        }
+      }
+
+      .tab-underline {
+        height: 2px;
+        background: rgba(255, 255, 255, 0.1);
+        margin-top: 0.5rem;
+        position: relative;
+        overflow: hidden;
+
+        .underline-fill {
+          height: 2px;
+          background: #fff;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0%;
+          transition: width 0.7s ease-in-out;
+        }
+      }
+
+      .tab-description {
+        margin-top: 0.75rem;
+        color: #ccc;
+        font-size: 1rem;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.6s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+
+      &.active {
+        .tab-title,
+        .tab-number {
+          color: #fff;
         }
 
-        &.open .accordion-header {
-          color: #000;
+        .underline-fill {
+          width: 100% !important;
         }
 
-        .icon {
-          font-size: 1.5vw;
+        .tab-description {
+          opacity: 1;
+          transform: translateY(0);
+          max-height: 200px;
         }
       }
     }
   }
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
+  .service-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 
-  .left-image {
-  width: 151%;
-  height: 100vh;
-  background-image: url('/assets/our_approach/our_approach.webp');
-  background-size: contain;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.6s ease;
-
-  // Optional zoom on hover
-  &:hover {
-    transform: scale(1.02);
-  }
-
-  // Glass overlay
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.1); // faint white overlay
-    backdrop-filter: blur(0px);
-    transition: backdrop-filter 0.4s ease, background 0.4s ease;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  &:hover::after {
-    backdrop-filter: blur(6px);
-    background: rgba(255, 255, 255, 0.2);
+    .service-image {
+      width: 100%;
+      max-width: 500px;
+      height: 581px;
+      object-fit: cover;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
   }
 }
 
+@media (max-width: 768px) {
+  .services-section {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0rem 1rem;
 
+    .service-tabs {
+      gap: 1.5rem;
 
-    .right-content {
-      width: 88%;
-      padding: 6vw 5vw;
+      .service-tab {
+        padding: 0.75rem 0;
 
-      .title {
-        font-size: 8vw;
+        .tab-header {
+          .tab-number {
+            font-size: 1rem;
+          }
+
+          .tab-title {
+            font-size: 1.25rem;
+          }
+        }
+
+        .tab-description {
+          font-size: 0.95rem;
+          max-height: none;
+        }
+      }
+    }
+
+    .service-preview {
+      order: 2;
+      justify-content: center;
+      align-items: center;
+
+      .service-image {
+        width: 110%;
+        max-width: 144%;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        border-radius: 12px;
+      }
+    }
+  }
+
+  .services-section-wrapper {
+    padding: 3rem 1rem;
+
+    .section-top {
+      .main-title {
+        font-size: 2rem;
       }
 
-      .accordion .accordion-item {
-        .accordion-header {
-          font-size: 4vw;
-        }
-        .accordion-body {
-          font-size: 3.5vw;
-        }
-        .icon {
-          font-size: 5vw;
-        }
+      .subtitle {
+        font-size: 0.875rem;
       }
     }
   }

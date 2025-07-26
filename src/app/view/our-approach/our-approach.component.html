@@ -1,30 +1,36 @@
-<section class="approach-section" #approachRef>
-  <div class="left-image  image-animate" style="background-image: url('/assets/serviceImages/Architecture.webp')"></div>
+<!--  -->
+<div class="services-section-wrapper">
+  <div class="section-top">
+    <div class="subtitle-wrapper">
+   
+      
+    </div>
+    <div class="title-wrapper">
+      <h2 class="main-title">Our Approach Process </h2>
+    </div>
+  </div>
 
-  <div class="right-content content-animate">
-    <div class="title title-animate">Our Approach Process</div>
-
-    <p class="intro-text text-animate">
-      We design with a deep sense of purpose—guided by research, driven by vision.<br>
-      Every decision is rooted in context, function, and future impact.<br>
-      Our process blends creativity with precision to shape meaningful spaces.
-    </p>
-
-    <div class="accordion accordion-animate">
-      <div
-        class="accordion-item"
-        *ngFor="let item of accordionItems; let i = index"
-        (click)="toggleAccordion(i)"
-        [class.open]="item.open"
-      >
-        <div class="accordion-header">
-          {{ item.title }}
-          <span class="icon">{{ item.open ? '−' : '+' }}</span>
+  <div class="services-section">
+    <div class="service-tabs" #serviceTabs>
+      <div *ngFor="let service of services; let i = index" class="service-tab" [class.active]="i === activeIndex"
+        (mouseenter)="setActive(i)">
+        <div class="tab-header">
+          <span class="tab-number">{{ service.number }}</span>
+          <h4 class="tab-title">{{ service.title }}</h4>
         </div>
-        <div class="accordion-body" *ngIf="item.open">
-          <p>{{ item.content }}</p>
+
+        <div class="tab-underline">
+          <div class="underline-fill" [style.width.%]="i === activeIndex ? 100 : 0"></div>
+        </div>
+
+        <div class="tab-description" *ngIf="i === activeIndex">
+          <p>{{ service.description }}</p>
         </div>
       </div>
     </div>
+
+    <div class="service-preview" #servicePreview>
+      <img class="service-image" [src]="services[activeIndex].image" [alt]="services[activeIndex].title" />
+    </div>
   </div>
-</section>
+</div>
