@@ -21,10 +21,43 @@ body{
   align-items: center;
   justify-content: center;
   padding: 0;
-  box-sizing: border-box;
   margin: 0;
-  background-color: #000;
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  isolation: isolate;
+
+  // Optional: Add a dark overlay
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); // dark overlay
+    z-index: -1;
+  }
 }
+
+.stack-section.section1 {
+  background-image: url('/assets/elegant-black-minimal-interior-design.jpg');
+}
+
+.stack-section.section2 {
+  background-image: url('/assets/stylish-modern-living-room-interior.jpg');
+}
+
+.stack-section.section3 {
+  background-image: url('/assets/modern-living-room-with-dark-walls-comfortable-furniture.jpg');
+}
+.stack-section.section4 {
+  background-image: url('/assets/elegant-black-minimal-interior-designs.jpg');
+}
+.stack-section.section5 {
+  background-image: url('/assets/interior-design-neoclassical-style-with-furnishings-decors.jpg');
+}
+
+
 
 .section-inner {
   display: flex;
