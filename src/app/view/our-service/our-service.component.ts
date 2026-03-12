@@ -50,6 +50,22 @@ export class OurServiceComponent  implements AfterViewInit {
         onEnter: () => this.flash(floatingEl),
         onEnterBack: () => this.flash(floatingEl),
       });
+
+      // New: Animate the visual container reveal
+      const visual = card.nativeElement.querySelector('.visual-container');
+      if (visual) {
+        gsap.from(visual, {
+          x: 100,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card.nativeElement,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+          }
+        });
+      }
     });
   }
 

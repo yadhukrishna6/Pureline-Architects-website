@@ -30,7 +30,12 @@
     </div>
 
     <div class="service-preview" #servicePreview>
-      <img class="service-image" [src]="services[activeIndex].image" [alt]="services[activeIndex].title" />
+      <div class="visual-frame-container">
+        <div class="blueprint-grid"></div>
+        <div class="visual-border"></div>
+        <img class="service-image" [src]="services[activeIndex].image" [alt]="services[activeIndex].title" />
+        <div class="visual-vignette"></div>
+      </div>
     </div>
   </div>
 </div>
