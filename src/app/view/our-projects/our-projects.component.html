@@ -15,7 +15,7 @@
 <section class="featured-works" #outerWrapper>
   <div class="scroll-wrapper">
   <div class="horizontal-scroll-section" #scrollSection>
-    <div class="project-slide" *ngFor="let project of projects">
+    <div class="project-slide" *ngFor="let project of projects" (click)="goToDetail(project.id)" style="cursor: pointer;">
       <div class="project-image" [style.backgroundImage]="'url(' + project.image + ')'" #parallaxImage></div>
 
       <div class="overlay-content">

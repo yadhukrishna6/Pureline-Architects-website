@@ -15,7 +15,7 @@
     .overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.45); // dark overlay
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%);
       z-index: -1;
     }
   }
@@ -24,95 +24,150 @@
     position: relative;
     z-index: 2;
 
-    // Remove white background for title section
+    // Transparent Title Section
     .project-title-wrapper {
-          height: 100vh;
-    display: flex
-;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    color: white;
-    text-align: center;
-    padding: 0px 11rem;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; // Push to bottom
+        align-items: start;
+        color: white;
+        text-align: left;
+        padding: 0px 10vw;
+        padding-bottom: 8rem;
 
       .project-category {
         font-size: 1.0rem;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-left: 22px;
+        letter-spacing: 3px;
+        margin-left: 5px;
+        margin-bottom: 0.5rem;
+        opacity: 0.9;
+        font-weight: 500;
       }
 
       .project-title {
-        font-size: 8.8rem;
+        font-size: clamp(4rem, 8vw, 8rem);
         font-weight: 800;
+        line-height: 1.1;
       }
-    }
 
-    .project-description {
-      background: #fff;
-      padding: 5vw 10vw;
-      font-size: 1.2rem;
-      line-height: 1.8;
-      color: #333;
-    }
-  }
-}
-.project-description {
-  padding-bottom: 10rem; // Gives space before footer
-}
-@media screen and (max-width: 768px) {
-  .project-detail-container {
-    .project-scroll-content {
-      .project-title-wrapper {
-        padding: 0 1.5rem;
+      // Animated Scroll Indicator
+      .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 10vw;
+        display: flex;
         align-items: center;
-        text-align: center;
+        gap: 15px;
+        opacity: 0.7;
 
-        .project-category {
-          font-size: 4vw;
-          margin-left: 0;
-          margin-bottom: 2vw;
+        span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .project-title {
-          font-size: 10vw;
+        .line {
+            width: 1px;
+            height: 40px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #ff5e3a; // Accent color
+                animation: scrollLine 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+            }
         }
       }
+    }
 
-      .project-description {
-        padding: 10vw 5vw;
-        font-size: 4vw;
-        line-height: 1.6;
-      }
+    // Editorial Info Layout
+    .project-info-container {
+        display: grid;
+        grid-template-columns: 1fr 2.5fr;
+        gap: 5rem;
+        background: #fff;
+        padding: 7rem 10vw;
+
+        .project-sidebar {
+            position: sticky;
+            top: 6rem;
+            height: max-content;
+
+            .meta-block {
+                margin-bottom: 2.5rem;
+                padding-bottom: 1.5rem;
+                border-bottom: 1px solid #eaeaea;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                h4 {
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    color: #888;
+                    margin-bottom: 0.5rem;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 1.1rem;
+                    color: #111;
+                    font-weight: 500;
+                    margin: 0;
+                }
+            }
+        }
+
+        .project-description {
+            font-size: 1.3rem;
+            line-height: 2;
+            color: #333;
+            font-weight: 400;
+
+            p {
+                margin-bottom: 2rem;
+            }
+        }
     }
   }
 }
-.project-meta {
-  background: #f9f9f9;
-  padding: 3rem 10vw;
-  font-size: 1.1rem;
-  color: #444;
 
-  h3 {
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-    color: #000;
-  }
+// Keyframes for scroll line
+@keyframes scrollLine {
+    0% { transform: translateY(-100%); }
+    50% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
+@media screen and (max-width: 900px) {
+    .project-detail-container .project-scroll-content .project-info-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
 
-    li {
-      margin-bottom: 0.5rem;
-
-      strong {
-        font-weight: 600;
-        margin-right: 0.5rem;
-      }
+        .project-sidebar {
+            position: relative;
+            top: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            
+            .meta-block {
+                margin-bottom: 0;
+                padding-bottom: 1rem;
+            }
+        }
     }
-  }
 }
 
 .project-gallery {
@@ -127,18 +182,38 @@
 
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
 
     img {
       width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease;
 
       &:hover {
         transform: scale(1.03);
       }
     }
+  }
+}
+
+.project-map {
+  padding: 3rem 10vw;
+  background: #f9f9f9;
+
+  h3 {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    color: #000;
+  }
+
+  .map-wrapper {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 }

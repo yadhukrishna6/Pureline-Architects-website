@@ -20,14 +20,14 @@ export class AboutUsComponent implements AfterViewInit, OnDestroy {
 
   @ViewChild('aboutContainer', { static: true }) aboutContainer!: ElementRef;
 
-  constructor(private elRef: ElementRef) {}
+  constructor(private elRef: ElementRef) { }
 
   ngAfterViewInit(): void {
     gsap.registerPlugin(ScrollTrigger);
 
     const el = this.elRef.nativeElement;
-      const elr = this.aboutContainer.nativeElement;
- gsap.fromTo(elr,
+    const elr = this.aboutContainer.nativeElement;
+    gsap.fromTo(elr,
       { x: '100vw', opacity: 0 },
       {
         x: '0vw',

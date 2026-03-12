@@ -19,6 +19,7 @@ import { ContactUsComponent } from './view/contact-us/contact-us.component';
 import { ProjectMasterComponent } from './view/project-master/project-master.component';
 import { ProjectDetailComponent } from './view/project-detail/project-detail.component';
 import { HomelayoutComponent } from './view/homelayout/homelayout.component';
+import { AboutPageComponent } from './view/about-page/about-page.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HomelayoutComponent } from './view/homelayout/homelayout.component';
     ContactUsComponent,
     ProjectMasterComponent,
     ProjectDetailComponent,
-    HomelayoutComponent
+    HomelayoutComponent,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,

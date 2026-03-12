@@ -18,44 +18,32 @@ export class ContactUsComponent implements AfterViewInit{
 
     constructor(private messageService: MessageService) {}
 
-@ViewChild('contactSection') contactSection!: ElementRef;
- @ViewChild('contactInfoSection') contactInfoSection!: ElementRef;
- ngAfterViewInit(): void {
-    const formElements = this.contactSection.nativeElement.querySelectorAll('.form-group, .submit-btn');
-  const boxes = this.contactInfoSection.nativeElement.querySelectorAll('.info-box');
+  @ViewChild('contactSection') contactSection!: ElementRef;
 
-    gsap.from(formElements, {
+  ngAfterViewInit(): void {
+    // Animate Sidebar Info (Slide in from left)
+    gsap.from('.staggered-sidebar', {
       opacity: 0,
-      y: 50,
+      x: -30,
       duration: 1,
-      stagger: 0.2,
+      stagger: 0.15,
       ease: 'power2.out',
       scrollTrigger: {
-        trigger: this.contactSection.nativeElement,
+        trigger: '.contact-wrapper',
         start: 'top 80%',
       },
     });
 
-    gsap.from('.contact-image img', {
-      scale: 0.9,
+    // Animate Form Fields (Slide in from right)
+    gsap.from('.staggered-form', {
       opacity: 0,
-      duration: 1.2,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: this.contactSection.nativeElement,
-        start: 'top 85%',
-      }
-    });
-     gsap.from(boxes, {
-      opacity: 0,
-      y: 40,
+      x: 30,
       duration: 1,
-      stagger: 0.2,
+      stagger: 0.1,
       ease: 'power2.out',
       scrollTrigger: {
-        trigger: this.contactInfoSection.nativeElement,
-        start: 'top 80%',
-        toggleActions: 'play none none none',
+        trigger: '.contact-wrapper',
+        start: 'top 75%',
       },
     });
   }

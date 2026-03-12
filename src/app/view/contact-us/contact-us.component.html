@@ -12,58 +12,90 @@
 <section class="contact-page" #contactSection>
   <div class="contact-wrapper">
 
-    <!-- Left Side Image -->
-    <div class="contact-image">
-      <img src="/assets/service_bg.jpg" alt="Interior Image" />
-    </div>
+    <!-- Left Side Sticky Sidebar (Contact Info) -->
+    <aside class="contact-sidebar">
+      <div class="sidebar-intro staggered-sidebar">
+        <h3>Get in Touch</h3>
+        <p>We're highly approachable and would love to speak to you. Reach out via the details below or fill out the form.</p>
+      </div>
 
-    <!-- Right Side Form and Success Message -->
+      <div class="info-box staggered-sidebar">
+        <div class="icon-wrapper">
+          <i class="pi pi-phone"></i>
+        </div>
+        <div class="info-text">
+          <h4>Give us a call</h4>
+          <p>(407) 298–9140 x1192</p>
+        </div>
+      </div>
+
+      <div class="info-box staggered-sidebar">
+        <div class="icon-wrapper">
+          <i class="pi pi-envelope"></i>
+        </div>
+        <div class="info-text">
+          <h4>Send an email</h4>
+          <p><a href="mailto:Henry.Blick@hotmail.com">Henry.Blick&#64;hotmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="info-box staggered-sidebar">
+        <div class="icon-wrapper">
+          <i class="pi pi-map-marker"></i>
+        </div>
+        <div class="info-text">
+          <h4>Our Location</h4>
+          <p>59875 Parisian Fork</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Side Minimalist Form -->
     <div class="contact-form-wrapper">
 
-      <!-- Contact Form -->
       <form class="contact-form" *ngIf="!formSubmitted" #contactForm="ngForm" (ngSubmit)="submitForm(contactForm)">
         <div class="form-grid">
 
           <!-- Full Name -->
-          <div class="form-group">
+          <div class="form-group staggered-form">
             <label for="fullname">Full Name*</label>
-            <input type="text" id="fullname" name="from_name" ngModel required #fromName="ngModel" />
+            <input type="text" id="fullname" name="from_name" ngModel required #fromName="ngModel" placeholder="John Doe" />
             <small class="error" *ngIf="fromName.invalid && fromName.touched">
               Full Name is required.
             </small>
           </div>
 
           <!-- Email -->
-          <div class="form-group">
+          <div class="form-group staggered-form">
             <label for="email">Your Email*</label>
-            <input type="email" id="email" name="from_email" ngModel required #fromEmail="ngModel" />
+            <input type="email" id="email" name="from_email" ngModel required #fromEmail="ngModel" placeholder="john@example.com" />
             <small class="error" *ngIf="fromEmail.invalid && fromEmail.touched">
               Valid email is required.
             </small>
           </div>
 
           <!-- Phone -->
-          <div class="form-group">
+          <div class="form-group staggered-form">
             <label for="phone">Phone Number*</label>
-            <input type="text" id="phone" name="phone" ngModel required #phone="ngModel" />
+            <input type="text" id="phone" name="phone" ngModel required #phone="ngModel" placeholder="(555) 000-0000" />
             <small class="error" *ngIf="phone.invalid && phone.touched">
               Phone number is required.
             </small>
           </div>
 
           <!-- Subject -->
-          <div class="form-group">
+          <div class="form-group staggered-form">
             <label for="subject">Subject*</label>
-            <input type="text" id="subject" name="subject" ngModel required #subject="ngModel" />
+            <input type="text" id="subject" name="subject" ngModel required #subject="ngModel" placeholder="Project Inquiry" />
             <small class="error" *ngIf="subject.invalid && subject.touched">
               Subject is required.
             </small>
           </div>
 
           <!-- Message -->
-          <div class="form-group full-width">
+          <div class="form-group full-width staggered-form">
             <label for="message">Your Message*</label>
-            <textarea id="message" name="message" rows="6" ngModel required #message="ngModel"></textarea>
+            <textarea id="message" name="message" rows="4" ngModel required #message="ngModel" placeholder="Tell us about your project..."></textarea>
             <small class="error" *ngIf="message.invalid && message.touched">
               Message is required.
             </small>
@@ -71,57 +103,22 @@
         </div>
 
         <!-- Submit Button -->
-        <div class="form-actions">
+        <div class="form-actions staggered-form">
           <button type="submit" class="submit-btn" [disabled]="isSubmitting">
-            {{ isSubmitting ? 'Please wait...' : 'Submit' }}
+            {{ isSubmitting ? 'Please wait...' : 'Send Message' }}
+            <i class="pi pi-arrow-right icon-arrow" *ngIf="!isSubmitting"></i>
           </button>
         </div>
       </form>
 
       <!-- Thank You Message -->
       <div class="success-block" *ngIf="formSubmitted">
-
         <h3 class="success-title">Message Sent! ✅</h3>
         <p class="success-text">
           Thanks for contacting us. We’ll get back to you shortly.
         </p>
       </div>
 
-    </div>
-  </div>
-</section>
-
-
-<section class="contact-info-section" #contactInfoSection>
-  <div class="contact-info-wrapper">
-    <div class="info-box">
-      <div class="icon-wrapper">
-        <i class="pi pi-phone"></i>
-      </div>
-      <div class="info-text">
-        <h4>Give us call</h4>
-        <p>(407) 298–9140 x1192</p>
-      </div>
-    </div>
-
-    <div class="info-box">
-      <div class="icon-wrapper">
-        <i class="pi pi-envelope"></i>
-      </div>
-      <div class="info-text">
-        <h4>Send us Email</h4>
-        <p><a href="mailto:Henry.Blick@hotmail.com">Henry.Blickhotmail.com</a></p>
-      </div>
-    </div>
-
-    <div class="info-box">
-      <div class="icon-wrapper">
-        <i class="pi pi-map-marker"></i>
-      </div>
-      <div class="info-text">
-        <h4>Our Location</h4>
-        <p>59875 Parisian Fork</p>
-      </div>
     </div>
   </div>
 </section>

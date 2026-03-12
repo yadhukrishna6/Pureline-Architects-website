@@ -10,19 +10,25 @@
   color: #fff;
 
   .cta-bg {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.55),
-        rgba(0, 0, 0, 0.2)
-      ),
-      url("/assets/serviceImages/contatusss.webp");
-
+       position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%; // Ensures parallax shift won't reveal gaps
+    z-index: -1;
+    will-change: transform;
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('/assets/stylish-modern-living-room-interior.jpg');
+    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
     position: absolute;
     inset: 0;
     z-index: -1;
     will-change: transform;
-    transform: scale(1.1);
   }
 
   .cta-content {
@@ -107,6 +113,9 @@
           font-size: 3vw;
         }
       }
+    .cta-bg {
+      height: 140%; // extra buffer for mobile scroll stretching
     }
+  }
   }
 }

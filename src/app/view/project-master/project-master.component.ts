@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren }
 import { Router } from '@angular/router';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { PROJECTS } from '../../shared/data/projects.data';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,13 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 export class ProjectMasterComponent implements OnInit, AfterViewInit {
 
   @ViewChildren('projectCard') projectCards!: QueryList<ElementRef>;
-  projects = [
-    { id: 1, category: 'Residential Spaces', title: 'Cozy Bedroom', image: 'assets/pexels-valeriya-827518.jpg' },
-    { id: 2, category: 'Commercial Interiors', title: 'Chic Café', image: 'assets/pexels-fotoaibe-1643383.jpg' },
-    { id: 3, category: 'Residential Spaces', title: 'Cozy Bedroom', image: 'assets/pexels-valeriya-827518.jpg' },
-    { id: 4, category: 'Commercial Interiors', title: 'Chic Café', image: 'assets/pexels-fotoaibe-1643383.jpg' },
-    // more...
-  ];
+  projects = PROJECTS;
 
   goToDetail(id: number) {
     this.router.navigate(['/projects', id]);

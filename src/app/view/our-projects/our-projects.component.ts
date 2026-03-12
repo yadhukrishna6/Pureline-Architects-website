@@ -8,6 +8,8 @@ import {
 } from '@angular/core';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { PROJECTS } from '../../shared/data/projects.data';
+import { Router } from '@angular/router';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,23 +26,13 @@ export class OurProjectsComponent implements AfterViewInit {
   @ViewChild('floatingBtn', { static: true }) floatingBtn!: ElementRef;
   @ViewChildren('parallaxImage') parallaxImages!: QueryList<ElementRef>;
 
-  projects = [
-    {
-      type: 'Residential',
-      title: 'Solstice Point Villa',
-      image: 'assets/pexels-valeriya-827518.jpg',
-    },
-    {
-      type: 'Residential',
-      title: 'Ecohaus Residence',
-      image: 'assets/service_bg.jpg',
-    },
-    {
-      type: 'Residential',
-      title: 'House on Rocky Island',
-      image: 'assets/pexels-fotoaibe-1643383.jpg',
-    },
-  ];
+  constructor(private router: Router) {}
+
+  projects = PROJECTS;
+
+  goToDetail(id: number) {
+    this.router.navigate(['/projects', id]);
+  }
 
   ngAfterViewInit(): void {
     const scrollContainer = this.scrollSection.nativeElement;

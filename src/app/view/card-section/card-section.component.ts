@@ -16,7 +16,7 @@ export class CardSectionComponent  implements AfterViewInit {
   ngAfterViewInit(): void {
     // Parallax effect on background
     gsap.to(this.parallaxBg.nativeElement, {
-      y: -100,
+      y: -10,
       ease: 'none',
       scrollTrigger: {
         trigger: this.ctaSection.nativeElement,

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { ContactUsComponent } from './view/contact-us/contact-us.component';
+import { AboutPageComponent } from './view/about-page/about-page.component';
+import { OurServiceComponent } from './view/our-service/our-service.component';
 import { HomeComponent } from './view/home/home.component';
 import { ProjectDetailComponent } from './view/project-detail/project-detail.component';
 import { ProjectMasterComponent } from './view/project-master/project-master.component';
@@ -9,9 +11,10 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactUsComponent },
-    { path: 'projects', component: ProjectMasterComponent },
+  { path: 'projects', component: ProjectMasterComponent },
   { path: 'projects/:id', component: ProjectDetailComponent },
-
+  { path: 'about', component: AboutPageComponent },
+  { path: 'services', component: OurServiceComponent },
 ];
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',

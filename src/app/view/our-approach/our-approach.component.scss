@@ -1,9 +1,14 @@
 .services-section-wrapper {
-  background-color: #000;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+    url('/assets/stylish-modern-living-room-interior.jpg'); // Replace with your image path
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #fff;
   padding: 6rem 2rem;
-  max-width: 1362px;
-  margin: 0 auto;
+
 
   .section-top {
     text-align: start;
@@ -22,13 +27,16 @@
       font-weight: 700;
       color: #fff;
       margin: 0;
-      margin-left: 2rem;
+      margin-left: 6rem;
     }
   }
 }
 
 .services-section {
   display: flex;
+      max-width: 1323px;
+    margin: 0 auto;
+
   gap: 4rem;
   align-items: flex-start;
   padding: 4rem 2rem;
@@ -183,6 +191,7 @@
     .section-top {
       .main-title {
         font-size: 2rem;
+                margin-left: 1rem;
       }
 
       .subtitle {
