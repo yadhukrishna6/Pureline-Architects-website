@@ -225,6 +225,7 @@ p {
   position: relative;
   width: 100%; 
   z-index: 1; 
+  overflow-x: hidden;
 }
 
 .content { 
@@ -243,7 +244,7 @@ p {
   background-size: cover;
 }
 
- .about-card {
+  .about-card {
     position: absolute;
     top: 0;
     left: 0;
@@ -257,7 +258,9 @@ p {
     justify-content: center;
     font-size: 2rem;
     z-index: 30;
-    transform: translateX(100%);
+    opacity: 0;
+    overflow: hidden;
+    box-sizing: border-box;
     will-change: transform, opacity;
   }
 
@@ -364,11 +367,6 @@ p {
 
 
 
-.aboutus-section {
-  will-change: transform, opacity;
-  transform: translateX(100vw);
-  opacity: 0;
-}
 
 
 }

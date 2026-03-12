@@ -35,7 +35,7 @@ export class HomelayoutComponent implements AfterViewInit {
       scrollTrigger: {
         trigger: heroSection,
         start: 'top top',
-        end: '+=400%', // Increased duration to accommodate internal about section animations
+        end: '+=500%', // Increased duration further to ensure all animations are reachable
         pin: true,
         scrub: true,
       }
@@ -93,7 +93,7 @@ export class HomelayoutComponent implements AfterViewInit {
         },
         '<'
       )
-      // 👇 Internal About Section Animations
+      // 👇 Internal About Section Animations - ensure they start AFTER the section has finished sliding in
       .fromTo(headingBig, {
         scale: 0.5,
         opacity: 0
@@ -102,7 +102,7 @@ export class HomelayoutComponent implements AfterViewInit {
         opacity: 0.6,
         ease: 'power2.out',
         duration: 2
-      }, '>-0.5')
+      }, '+=0.2') // Added delay after section transition
       .fromTo([headingSmall, headingText], {
         x: -50,
         opacity: 0
@@ -112,7 +112,7 @@ export class HomelayoutComponent implements AfterViewInit {
         stagger: 0.3,
         ease: 'power2.out',
         duration: 1.5
-      }, '<+0.5')
+      }, '>') // Explicitly start after headingBig
       .fromTo(bannerBigimg, {
         yPercent: 50,
         opacity: 0
