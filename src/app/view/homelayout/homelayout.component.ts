@@ -89,39 +89,45 @@ export class HomelayoutComponent implements AfterViewInit {
           xPercent: 0,
           opacity: 1,
           ease: 'power2.out',
-          duration: 2
+          duration: 1.5
         },
         '<'
       )
-      // 👇 Internal About Section Animations - ensure they start AFTER the section has finished sliding in
+      // 👇 Cinematic WOW Reveal
       .fromTo(headingBig, {
-        scale: 0.5,
-        opacity: 0
+        scale: 0.8,
+        opacity: 0,
+        filter: 'blur(20px)'
       }, {
         scale: 1,
-        opacity: 0.6,
-        ease: 'power2.out',
-        duration: 2
-      }, '+=0.2') // Added delay after section transition
+        opacity: 0.2,
+        filter: 'blur(0px)',
+        ease: 'expo.out',
+        duration: 2.2
+      }, '+=0.1')
       .fromTo([headingSmall, headingText], {
-        x: -50,
+        y: 60,
+        rotationX: 30, // Subtle 3D tilt
         opacity: 0
       }, {
-        x: 0,
+        y: 0,
+        rotationX: 0,
         opacity: 1,
         stagger: 0.3,
-        ease: 'power2.out',
-        duration: 1.5
-      }, '>') // Explicitly start after headingBig
-      .fromTo(bannerBigimg, {
-        yPercent: 50,
-        opacity: 0
-      }, {
-        yPercent: 0,
-        opacity: 1,
-        ease: 'power2.out',
+        ease: 'expo.out',
         duration: 2
-      }, '<');
+      }, '<+0.4')
+      .fromTo(bannerBigimg, {
+        opacity: 0,
+        scale: 1.15,
+        clipPath: 'inset(0% 100% 0% 0%)'
+      }, {
+        opacity: 1,
+        scale: 1,
+        clipPath: 'inset(0% 0% 0% 0%)',
+        ease: 'expo.inOut',
+        duration: 2.5
+      }, '<+0.3');
 
     ScrollTrigger.refresh();
   }

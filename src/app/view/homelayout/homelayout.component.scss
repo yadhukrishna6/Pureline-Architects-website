@@ -180,36 +180,37 @@ p {
   transform: scale(0.5);
 }
 .banner-text {
-   font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 100px 0 0;
   padding: 135px 0 0 80px;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 50; /* Ensure it stays on top */
   max-width: 80%;
-  overflow: hidden;
 }
 .banner-text h2 {
-   font-family: "Poppins", sans-serif;
-  margin:-14px 7px 8px;
-  font-size: 104px;
-  line-height: 1.0;
-  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  margin: 0 0 10px;
+  font-size: 112px; /* Slightly larger for impact */
+  line-height: 1.1;
+  font-weight: 600; /* Bolder for premium feel */
   font-style: normal;
   color: white;
   position: relative;
   user-select: none;
+  opacity: 0;
 }
 .banner-text h3 {
-   font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-  color: rgb(255 255 255 / 72%);
+  font-weight: 300;
+  font-size: 24px; /* More readable subheader */
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
   position: relative;
   opacity: 0;
+  margin-top: 20px;
 }
 
 
