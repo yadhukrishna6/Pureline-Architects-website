@@ -97,7 +97,8 @@
     height: 100vh;
 
     .hero-content {
-      padding-left: 4vw;
+      width: 100%;
+      padding: 0 20px;
       top: 45%;
       justify-content: center !important;
       display: flex;
@@ -105,9 +106,10 @@
       align-items: center;
 
       .hero-title {
-        font-size: 5.5rem;
+        font-size: clamp(3.5rem, 18vw, 5.5rem);
         text-align: center;
         justify-content: center;
+        line-height: 0.95;
       }
       .hero-subtitle {
         font-size: 1rem;
@@ -225,4 +227,54 @@
 //about-us section
 .our-approach-section{
   background-color: #000000;
+}
+
+@media (max-width: 900px) {
+  .hero-scroll-down-btn {
+    left: 50%;
+    bottom: 24px;
+    width: 56px;
+    height: 56px;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    .hero-content {
+      width: min(100%, 760px);
+      padding: 0 32px;
+      top: 52%;
+
+      .hero-title {
+        font-size: clamp(4.5rem, 16vw, 8rem);
+        line-height: 0.92;
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1rem, 2.2vw, 1.25rem);
+        max-width: 36rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    min-height: 100svh;
+
+    .hero-content {
+      padding: 0 16px;
+      top: 50%;
+
+      .hero-title {
+        font-size: clamp(3rem, 20vw, 4.5rem);
+      }
+
+      .hero-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+    }
+  }
 }

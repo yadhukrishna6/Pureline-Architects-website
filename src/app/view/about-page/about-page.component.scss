@@ -120,6 +120,11 @@
         display: flex;
         gap: 4rem;
 
+        @media (max-width: 768px) {
+          flex-wrap: wrap;
+          gap: 2rem;
+        }
+
         .value-item {
           display: flex;
           flex-direction: column;
@@ -184,6 +189,11 @@
         line-height: 1.8;
         color: #555;
         max-width: 90%;
+
+        @media (max-width: 768px) {
+          max-width: 100%;
+          font-size: 1rem;
+        }
       }
     }
 
@@ -249,6 +259,25 @@
           transition: transform 0.3s ease;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page-container {
+    section {
+      padding: 5rem 20px;
+    }
+
+    .about-hero {
+      min-height: 88svh;
+      padding-top: 72px;
+    }
+
+    .about-narrative .narrative-text h2,
+    .about-mission .mission-content h2,
+    .about-cta .cta-inner h2 {
+      line-height: 1.15;
     }
   }
 }

@@ -132,3 +132,22 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 4rem 1.25rem 3rem;
+
+    .footer-top {
+      gap: 2.5rem;
+    }
+
+    .footer-contact {
+      margin-right: 0;
+    }
+
+    .social-line {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}

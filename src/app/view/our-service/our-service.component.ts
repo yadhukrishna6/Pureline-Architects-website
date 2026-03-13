@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -10,25 +10,29 @@ gsap.registerPlugin(ScrollTrigger);
   templateUrl: './our-service.component.html',
   styleUrls: ['./our-service.component.scss'],
 })
-export class OurServiceComponent  implements AfterViewInit {
-   @ViewChild('serviceSection') serviceSection!: ElementRef;
+export class OurServiceComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('serviceSection') serviceSection!: ElementRef;
   @ViewChild('floatingBtn') floatingBtn!: ElementRef;
   @ViewChildren('serviceCard') serviceCards!: QueryList<ElementRef>;
-
-  constructor(private elRef: ElementRef, private renderer: Renderer2) {}
+  private removeMouseMove?: () => void;
 
   ngAfterViewInit(): void {
-    const floatingEl = this.floatingBtn.nativeElement;
+    if (window.innerWidth <= 1024) {
+      return;
+    }
 
-    // Floating button follows mouse
-    window.addEventListener('mousemove', (e) => {
+    const floatingEl = this.floatingBtn.nativeElement;
+    const moveHandler = (e: MouseEvent) => {
       gsap.to(floatingEl, {
         x: e.clientX,
         y: e.clientY,
         duration: 0.3,
         ease: 'power3.out',
       });
-    });
+    };
+
+    window.addEventListener('mousemove', moveHandler);
+    this.removeMouseMove = () => window.removeEventListener('mousemove', moveHandler);
 
     // Show/hide button based on section visibility
     ScrollTrigger.create({
@@ -102,5 +106,20 @@ export class OurServiceComponent  implements AfterViewInit {
         });
       },
     });
+  }
+
+  ngOnDestroy(): void {
+    this.removeMouseMove?.();
+
+    if (!this.serviceSection) {
+      return;
+    }
+
+    ScrollTrigger.getAll()
+      .filter((trigger) => {
+        const triggerElement = trigger.trigger;
+        return triggerElement instanceof Element && this.serviceSection.nativeElement.contains(triggerElement);
+      })
+      .forEach((trigger) => trigger.kill());
   }
 }

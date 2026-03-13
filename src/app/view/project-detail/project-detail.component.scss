@@ -217,3 +217,63 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 }
+
+@media screen and (max-width: 900px) {
+  .project-detail-container .project-scroll-content .project-title-wrapper {
+    padding: 0 20px 6rem;
+
+    .project-category {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+    }
+
+    .project-title {
+      font-size: clamp(2.5rem, 12vw, 4.5rem);
+    }
+
+    .scroll-indicator {
+      left: 20px;
+    }
+  }
+
+  .project-detail-container .project-scroll-content .project-info-container {
+    padding: 4rem 20px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .project-detail-container .project-scroll-content .project-info-container {
+    gap: 2rem;
+
+    .project-sidebar {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .project-description {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+  }
+
+  .project-gallery,
+  .project-map {
+    padding: 2.5rem 20px;
+  }
+
+  .project-gallery .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .project-detail-container .project-scroll-content .project-title-wrapper {
+    padding: 0 16px 5rem;
+  }
+
+  .project-gallery,
+  .project-map {
+    padding: 2rem 16px;
+  }
+}

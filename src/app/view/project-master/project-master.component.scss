@@ -228,3 +228,77 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .projects-master {
+    padding: 7rem 20px 4rem;
+
+    .project-card {
+      gap: 0.75rem;
+
+      .project-text-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .project-title {
+        font-size: 1.5rem;
+        text-align: left;
+      }
+
+      .project-category {
+        font-size: 0.95rem;
+      }
+    }
+
+    .section-heading {
+      font-size: clamp(2.25rem, 9vw, 3.5rem);
+    }
+
+    .section-subheading {
+      font-size: 1rem;
+    }
+  }
+
+  .cta-section {
+    min-height: 70vh;
+    padding: 0 20px;
+
+    .cta-content {
+      .cta-title {
+        font-size: clamp(2.2rem, 9vw, 3.5rem);
+      }
+
+      .cta-description {
+        font-size: 1rem;
+      }
+
+      .cta-button {
+        font-size: 1rem;
+        padding: 14px 22px;
+        border-radius: 999px;
+
+        .cta-icon {
+          margin-left: 10px;
+          width: 28px;
+          height: 28px;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .projects-master {
+    padding: 6.5rem 16px 3rem;
+
+    .project-card .project-title {
+      font-size: 1.3rem;
+    }
+  }
+
+  .cta-section {
+    padding: 0 16px;
+  }
+}

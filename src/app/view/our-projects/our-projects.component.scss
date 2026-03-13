@@ -149,18 +149,21 @@
 @media screen and (max-width: 768px) {
   
   .our-projects-section {
+    padding: 12vw 20px;
+
     .main-heading {
-      font-size: 8vw;
+      font-size: clamp(2.5rem, 10vw, 4rem);
       text-align: start;
     }
 
     .description {
-      font-size: 4vw;
+      font-size: 1rem;
       text-align: start;
+      line-height: 1.7;
     }
 
     .link-button {
-      font-size: 4vw;
+      font-size: 1rem;
       text-align: start;
     }
   }
@@ -173,10 +176,34 @@
   }
 
   .featured-works {
+    height: auto;
+    min-height: 72svh;
+    transform: none;
+
+    .scroll-wrapper {
+      height: auto;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .horizontal-scroll-section {
+      width: auto;
+    }
+
     .project-slide {
+      min-height: 72svh;
+      scroll-snap-align: start;
+
+      .project-image {
+        width: 100%;
+        height: 100%;
+      }
+
       .overlay-content {
         bottom: 2rem;
         left: 2rem;
+        right: 2rem;
 
         .tag {
           font-size: 0.9rem;
@@ -190,7 +217,26 @@
     }
 
     .floating-view-button {
-      font-size: 10px;
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .featured-works {
+    .project-slide {
+      min-height: 64svh;
+
+      .overlay-content {
+        left: 20px;
+        right: 20px;
+        bottom: 24px;
+
+        .title {
+          font-size: clamp(2rem, 11vw, 3rem);
+          line-height: 1.05;
+        }
+      }
     }
   }
 }

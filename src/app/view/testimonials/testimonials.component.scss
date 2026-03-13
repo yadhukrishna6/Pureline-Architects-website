@@ -140,7 +140,7 @@
 
     }@media screen and (max-width: 768px) {
   .testimonial-carousel {
-    padding:  12vw 19px;
+    padding: 12vw 20px;
 
     .heading-wrapper {
       .subheading {
@@ -162,8 +162,8 @@
       }
 
       .testimonial-card {
-        width: 80vw;
-        padding: 2.5vw; // reduced padding
+        width: min(80vw, 320px);
+        padding: 16px;
         min-height: 120px; // decreased from desktop
         display: flex;
         flex-direction: column;
@@ -189,7 +189,7 @@
         }
 
         .text {
-          font-size: 3.2vw;
+          font-size: 0.95rem;
           line-height: 1.4; // slightly tighter
         }
       }

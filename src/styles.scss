@@ -13,8 +13,33 @@ body {
   //  font-family: 'Urbanist', Arial, sans-serif;
   // font-family: 'Playfair Display', serif;
   font-family: 'Cormorant Garamond', serif;
-   overflow-x: hidden;
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+body,
+app-root {
+  width: 100%;
+  overflow-x: clip;
+}
+
+body.menu-open {
+  overflow: hidden;
+  touch-action: none;
 }

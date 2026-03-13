@@ -9,6 +9,66 @@ p {
   margin: 0;
   padding: 0;
 }
+
+@media screen and (max-width: 1024px) {
+  .company-section {
+    padding: 140px 20px 40px;
+  }
+
+  h2.title {
+    font-size: clamp(4rem, 16vw, 8rem);
+    top: 0;
+  }
+
+  .company-section h1 {
+    font-size: clamp(2.25rem, 6vw, 3.75rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .company-section .paragraph p {
+    font-size: clamp(1rem, 2.2vw, 1.125rem);
+    line-height: 1.8;
+  }
+
+  .compy-box {
+    max-width: 640px;
+    margin-inline: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .company-section {
+    padding: 110px 20px 32px;
+  }
+
+  .company-section .row {
+    row-gap: 2rem;
+  }
+
+  h2.title {
+    font-size: clamp(3rem, 18vw, 5rem);
+    top: 18px;
+  }
+
+  .company-section h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .company-section .paragraph p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .compy-box::before {
+    left: 14px;
+    top: -14px;
+  }
+
+  .compy-box img {
+    aspect-ratio: 4 / 5;
+  }
+}
 :root {
   --primary: #b79272;
   --black: #000000;
