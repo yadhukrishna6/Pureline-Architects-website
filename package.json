@@ -2,7 +2,7 @@
   "name": "pureline-architect",
   "version": "0.0.0",
   "scripts": {
-  "deploy": "ng build --base-href https://yadhukrishna6.github.io/Pureline-Architects-website/ && npx angular-cli-ghpages --dir=dist/pureline-architect"
+    "deploy": "ng build --base-href /Pureline-Architects-website/ && npx angular-cli-ghpages --dir=dist/pureline-architect/browser"
 },
   "private": true,
   "dependencies": {

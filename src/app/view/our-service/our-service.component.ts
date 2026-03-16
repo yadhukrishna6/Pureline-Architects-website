@@ -21,7 +21,8 @@ export class OurServiceComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
-    const floatingEl = this.floatingBtn.nativeElement;
+    const floatingEl = this.floatingBtn?.nativeElement;
+    if (!floatingEl) return;
     const moveHandler = (e: MouseEvent) => {
       gsap.to(floatingEl, {
         x: e.clientX,

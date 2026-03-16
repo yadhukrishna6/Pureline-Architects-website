@@ -30,23 +30,30 @@ export class HomelayoutComponent implements AfterViewInit {
     const headingText = el.querySelector('#headingText');
     const bannerBigimg = el.querySelector('#bannerBigimg');
 
+    if (!heroSection) return;
+
     // 👇 Separate GSAP timeline for the wrapper
-    gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: heroSection,
         start: 'top top',
-        end: '+=500%', // Increased duration further to ensure all animations are reachable
+        end: '+=500%', 
         pin: true,
         scrub: true,
       }
-    })
-      .to(heroImg, {
+    });
+
+    if (heroImg) {
+      tl.to(heroImg, {
         scale: 2,
         z: 350,
         transformOrigin: 'center center',
         ease: 'power1.inOut'
-      })
-      .fromTo(card1, {
+      });
+    }
+
+    if (card1) {
+      tl.fromTo(card1, {
         opacity: 0,
         y: 100
       }, {
@@ -54,8 +61,11 @@ export class HomelayoutComponent implements AfterViewInit {
         y: 0,
         ease: 'power2.out',
         duration: 1
-      }, '<+0.2')
-      .fromTo(card2, {
+      }, '<+0.2');
+    }
+
+    if (card2 && card2BgMask) {
+      tl.fromTo(card2, {
         yPercent: 100
       }, {
         yPercent: 0,
@@ -67,23 +77,35 @@ export class HomelayoutComponent implements AfterViewInit {
         y: 0,
         ease: 'power2.out',
         duration: 2
-      }, '<')
-      .to(card1, {
+      }, '<');
+    }
+
+    if (card1) {
+      tl.to(card1, {
         xPercent: -170,
         ease: 'power2.inOut',
         duration: 2
-      }, '<')
-      .to(card2, {
+      }, '<');
+    }
+
+    if (card2) {
+      tl.to(card2, {
         yPercent: -200,
         ease: 'none',
         duration: 2
-      })
-      .to(card2BgMask, {
+      });
+    }
+
+    if (card2BgMask) {
+      tl.to(card2BgMask, {
         yPercent: -100,
         ease: 'none',
         duration: 2
-      }, '<')
-      .fromTo(aboutCard,
+      }, '<');
+    }
+
+    if (aboutCard) {
+      tl.fromTo(aboutCard,
         { xPercent: 100, opacity: 0 },
         {
           xPercent: 0,
@@ -92,9 +114,11 @@ export class HomelayoutComponent implements AfterViewInit {
           duration: 1.5
         },
         '<'
-      )
-      // 👇 Cinematic WOW Reveal
-      .fromTo(headingBig, {
+      );
+    }
+
+    if (headingBig) {
+      tl.fromTo(headingBig, {
         scale: 0.8,
         opacity: 0,
         filter: 'blur(20px)'
@@ -104,10 +128,14 @@ export class HomelayoutComponent implements AfterViewInit {
         filter: 'blur(0px)',
         ease: 'expo.out',
         duration: 2.2
-      }, '+=0.1')
-      .fromTo([headingSmall, headingText], {
+      }, '+=0.1');
+    }
+
+    const headingGroup = [headingSmall, headingText].filter(e => e !== null);
+    if (headingGroup.length > 0) {
+      tl.fromTo(headingGroup, {
         y: 60,
-        rotationX: 30, // Subtle 3D tilt
+        rotationX: 30,
         opacity: 0
       }, {
         y: 0,
@@ -116,8 +144,11 @@ export class HomelayoutComponent implements AfterViewInit {
         stagger: 0.3,
         ease: 'expo.out',
         duration: 2
-      }, '<+0.4')
-      .fromTo(bannerBigimg, {
+      }, '<+0.4');
+    }
+
+    if (bannerBigimg) {
+      tl.fromTo(bannerBigimg, {
         opacity: 0,
         scale: 1.15,
         clipPath: 'inset(0% 100% 0% 0%)'
@@ -128,6 +159,7 @@ export class HomelayoutComponent implements AfterViewInit {
         ease: 'expo.inOut',
         duration: 2.5
       }, '<+0.3');
+    }
 
     ScrollTrigger.refresh();
   }
